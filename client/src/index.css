@@ -35,4 +35,12 @@ button {
 }
 
 /*-------------HEADER---------------*/
-@import url("componentes//header/styles.css")
+@import url("componentes/header/styles.css");
+
+/*-------------PRODUCTO---------------*/
+
+@import url("componentes/paginacion/productos/producto.css");
+
+/*--------------PERFILPRODUCTO----------*/
+
+@import url("componentes/paginacion/productos/perfilProducto.css");

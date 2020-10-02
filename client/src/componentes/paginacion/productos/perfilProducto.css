@@ -1,0 +1,46 @@
+.perfil{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 20px;
+	font-size: 150%;
+}
+.perfil img{
+	max-width: 400px;
+	width: 100%;
+	margin: 20px;
+	height: 450px;
+	object-fit: contain;
+	display: block;
+}
+.box-perfil{
+	max-width: 500px;
+	width: 100%;
+	margin: 20px 5px 20px 5px;
+}
+.box-perfil .row{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.box-perfil h2{
+	text-transform: uppercase;
+	color: darkblue;
+	letter-spacing: 2px;
+	font-weight: 2rem;
+}
+.box-perfil p{
+	line-height: 1.5;
+	margin: 10px 0;
+	opacity: .8;
+}
+.box-perfil .carrito{
+	background: #333;
+	color: white;
+	margin-top: 10px;
+	padding: 10px 25px;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 2px; 
+}

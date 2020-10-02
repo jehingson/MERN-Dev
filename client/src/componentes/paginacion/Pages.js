@@ -1,6 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Producto from './productos/Productos'
+import PerfilProducto from './productos/PerfilProducto'
 import Login from "./auth/Login"
 import Register from "./auth/Register";
 import Carrito from "./carrito/Carrito";
@@ -10,6 +11,8 @@ function Pages() {
   return (
     <Switch>
       <Route path="/" exact component={Producto} />
+      <Route path="/perfil/:id" exact component={PerfilProducto} />
+
       <Route path="/login" exact component={Login}  />
       <Route path="/register" exact component={Register} />
       <Route path="/carrito" exact component={Carrito} />
