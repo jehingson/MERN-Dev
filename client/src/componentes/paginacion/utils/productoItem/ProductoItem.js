@@ -1,23 +1,21 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import BtnRender from "./BtnRender";
 
-function ProductoItem({ producto }) {
+function ProductoItem({ producto, isAdmin }) {
   return (
     <div className="producto_card">
+      {
+        isAdmin && <input type="checkbox" checked={producto.checked} />
+      }
       <img src={producto.images.url} alt={producto.title} />
       <div className="producto_box">
         <h2 title={producto.title}>{producto.title}</h2>
         <span>${producto.price}</span>
         <p>{producto.description}: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis, modi porro</p>
       </div>
-      <div className="row_btn">
-        <Link id="btn_comprar" to="#!" >
-          Comprar
-        </Link>
-        <Link id="btn_vista" to={`/perfil/${producto._id}`} >
-          Vista
-        </Link>
-      </div>
+      
+      <BtnRender producto={producto} />
+
     </div>
   )
 }

@@ -44,3 +44,19 @@ button {
 /*--------------PERFILPRODUCTO----------*/
 
 @import url("componentes/paginacion/productos/perfilProducto.css");
+
+/*-----------LOGIN/register-----------------*/
+@import url("componentes/paginacion/auth/login.css");
+
+/*-----------CARRITO-----------------*/
+@import url("componentes/paginacion/carrito/carrito.css");
+
+
+/*------------HISTORIAL---------------*/
+@import url("componentes/paginacion/history/history.css");
+
+/*------------CATEGORIAS-------------*/
+@import url("componentes/paginacion/categorias/categorias.css");
+
+/*------------CREATEPRODUCTO-------------*/
+@import url("componentes/paginacion/createProducto/createProducto.css");

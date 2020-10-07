@@ -1,0 +1,47 @@
+.categorias{
+max-width: 700px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+margin: 30px auto;
+}
+.categorias form .grid{
+    display: flex;
+}
+
+.categorias form{
+    width: 290px;
+    margin-bottom: 20px;
+}
+.categorias label{
+    display: block;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: appercase;
+    margin-bottom: 10px;
+}
+.categorias input,
+ button{
+    height: 35px;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid #555;
+}
+.categorias input{
+    width: 220px;
+}
+.categorias button{
+    width: 70px;
+    background: #555;
+    color: white;
+    margin-left: 10px;
+}
+.categorias .row{
+    min-width: 290px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}

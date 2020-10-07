@@ -1,4 +1,5 @@
 const Usuarios = require('../models/userModel')
+const Payments = require('../models/paymentModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -30,7 +31,8 @@ const userCtrl = {
 
       res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
-        path: '/user/refresh_token'
+        path: '/user/refresh_token',
+        maxAge: 7*24*60*60*1000 // 7d
       })
 
       res.json(accesstoken)
@@ -58,7 +60,8 @@ const userCtrl = {
 
       res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
-        path: '/user/refresh_token'
+        path: '/user/refresh_token',
+        maxAge: 7*24*60*60*1000 // 7d
       })
 
       res.json(accesstoken)
@@ -105,11 +108,35 @@ const userCtrl = {
     } catch (err) {
       return res.status(500).json({ msg: err.message })
     }
+  },
+  addCart: async (req, res) => {
+    try {
+      console.log(req.usuario.id)
+      const user = await Usuarios.findById(req.usuario.id)
+      console.log('user', user)
+
+      if(!user) return res.status(400).json({msg: "El usuario no existe!"})
+
+      await Usuarios.findOneAndUpdate({_id: req.usuario.id},{
+        cart: req.body.cart
+      })
+      return res.json({msg: "Agregado al carrito"})
+    } catch (err) {
+      return res.status(500).json({ msg: err.message })
+    }
+  },
+  history: async (req, res) => {
+    try {
+      const history = await Payments.find({user_id: req.usuario.id})
+      res.json(history)
+    } catch (err) {
+      return res.status(500).json({ msg: err.message })
+    }
   }
 }
 
 createAccessToken = (usuario) => {
-  return jwt.sign(usuario, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '1d'})
+  return jwt.sign(usuario, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '11m'})
 }
 
 createRefreshToken = (usuario) => {

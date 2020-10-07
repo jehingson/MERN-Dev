@@ -8,6 +8,8 @@ function PerfilProducto() {
   const state = useContext(GlobalState)
   const [productos] = state.ProductosAPI.productos
   const [perfilProducto, setProductoPerfil] = useState([])
+  const addCart = state.userAPI.addCart
+
 
   useEffect(() => {
     if (params.id) {
@@ -33,7 +35,7 @@ function PerfilProducto() {
         <p>{perfilProducto.description}: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis, modi porro</p>
         <p>{perfilProducto.content}: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis, modi porro Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis, modi porro</p>
         <p>sold: {perfilProducto.sold}</p>
-        <Link to="/carrito" className="carrito" >Comprar ahora</Link>
+        <Link to="/carrito" className="carrito" onClick={() => addCart(perfilProducto)} >Comprar ahora</Link>
       </div>
     </div>
     <div>

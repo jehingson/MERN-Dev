@@ -14,6 +14,7 @@
   height: 500px;
   box-shadow: 0 0 15px #ddd;
   margin: 10px 0;
+  padding: 0 5px 0 5px;
   position: relative;
 }
 .producto_card img{
@@ -63,5 +64,10 @@
 }
 #btn_vista{
   background: teal;
-  margin-right: 5px;
+}
+
+.producto_card input{
+  position: absolute;
+  width: 25px;
+  height: 25px;
 }
