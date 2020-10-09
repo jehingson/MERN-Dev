@@ -20,7 +20,7 @@ function Pages() {
   const [isLogged] = state.userAPI.isLogged
   const [isAdmin] = state.userAPI.isAdmin
 
-  console.log(isLogged)
+  
 
 
   return (
@@ -35,6 +35,7 @@ function Pages() {
       CreateProducto
 
       <Route path="/crear_producto" exact component={isAdmin ? CreateProducto : Not404} />
+      <Route path="/edit_producto/:id" exact component={isAdmin ? CreateProducto : Not404} />
 
      
       <Route path="/historial" exact component={isLogged ? History : Not404 } />
