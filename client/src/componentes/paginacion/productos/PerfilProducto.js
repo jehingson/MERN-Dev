@@ -32,8 +32,8 @@ function PerfilProducto() {
           <h6>#id: {perfilProducto.producto_id}</h6>
         </div>
         <span>$ {perfilProducto.price}</span>
-        <p>{perfilProducto.description}: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis, modi porro</p>
-        <p>{perfilProducto.content}: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis, modi porro Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis, modi porro</p>
+        <p>{perfilProducto.description}</p>
+        <p>{perfilProducto.content}</p>
         <p>sold: {perfilProducto.sold}</p>
         <Link to="/carrito" className="carrito" onClick={() => addCart(perfilProducto)} >Comprar ahora</Link>
       </div>

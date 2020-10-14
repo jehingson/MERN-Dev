@@ -7,5 +7,4 @@ router.route('/payment')
     .get(auth, authAmin, paymentCtrl.getPayments)
     .post(auth, paymentCtrl.createpayment)
 
-
 module.exports = router

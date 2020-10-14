@@ -6,7 +6,6 @@ const multer = require('multer')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 
-
 //middlewares
 const app = express()
 app.use(cookieParser())
@@ -20,7 +19,6 @@ const storage = multer.diskStorage({
 app.use(multer({storage: storage}).single('file'))
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
-
 
 
 // Routes
