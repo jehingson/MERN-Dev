@@ -11,7 +11,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 // subir imagen
-router.post('/subir', async (req, res) => {
+router.post('/subir',auth, authAdmin, async (req, res) => {
   try {
       if(!req.file || Object.keys(req.file).length === 0 ) return res.status(400).json({msg: 'no se adjuntaron archivos.'})
       
@@ -27,7 +27,7 @@ router.post('/subir', async (req, res) => {
         return res.status(400).json({msg: 'El formato de archivo es incorrecto'})
       }
       
-      console.log(file)
+
       const result = await cloudinary.v2.uploader.upload(file.path, {folder: 'test'})
 
         removeTmp(file.path)
@@ -52,7 +52,7 @@ router.post('/destroy', auth, authAdmin, async (req, res) => {
      const {public_id} = req.body
     if(!public_id)  return res.status(400).json({msg: "no hay imágenes seleccionadas"})
 
-    await cloudinay.v2.uploader.destroy(public_id)
+    await cloudinary.v2.uploader.destroy(public_id)
 
     res.json({msg: "Imagen Eliminada"})
       

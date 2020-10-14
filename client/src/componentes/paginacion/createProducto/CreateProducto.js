@@ -53,7 +53,7 @@ function CreateProducto() {
     try {
       if (!isAdmin) return alert("No eres un administrador.")
       const file = e.target.files[0]
-      console.log(file)
+
       if (!file) return alert("Archivo no existe.")
 
       if (file.size > 1024 * 1024) return alert('Archivo muy grande.')
@@ -68,7 +68,7 @@ function CreateProducto() {
         headers: { 'content-type': 'multipart/form-data', Authorization: token }
       })
       setLoading(false)
-      console.log(res)
+      console.log('images' ,res)
       setImages(res.data)
 
 
