@@ -29,18 +29,13 @@ router.post('/subir', async (req, res) => {
       
       console.log(file)
       const result = await cloudinary.v2.uploader.upload(file.path, {folder: 'test'})
-      
-        console.log(result)
-        removeTmp(file.path)
-        res.json({result})
-      
-    
 
-  //     res.json({
-  //       public_id: result.public_id, 
-  //       url: result.secure_url
-  //     })
-  //   })
+        removeTmp(file.path)
+      res.json({
+        public_id: result.public_id, 
+        url: result.secure_url
+      })
+
 
   } catch (err) {
     if(req.file.path){
