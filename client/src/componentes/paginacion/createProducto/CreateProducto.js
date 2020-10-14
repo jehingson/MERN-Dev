@@ -166,6 +166,18 @@ function CreateProducto() {
         </div>
 
         <div className="row">
+          <label htmlFor="price">Precio</label>
+          <input
+            type="Number"
+            name="price"
+            id="price"
+            required
+            value={producto.price}
+            onChange={handleChangeInput}
+          />
+        </div>
+
+        <div className="row">
           <label htmlFor="description">Descriccion</label>
           <textarea
             type="text"
